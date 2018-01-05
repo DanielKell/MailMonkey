@@ -11,8 +11,10 @@ passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleSecret,
     callbackURL: '/auth/google/callback'
-}, (accessToken) => {
-        console.log(accessToken);
+}, (accessToken, refreshToken, profile, done) => {
+        console.log('access token: ', accessToken);
+        console.log('refresh token: ', refreshToken);
+        console.log('profile: ', profile);
     })
 );
 
@@ -21,8 +23,10 @@ app.get(
     passport.authenticate('google', {
         scope: ['profile', 'email']
     }
-))
+));
 //Scope = what we want to have access to in google
+
+app.get('/auth/google/callback', passport.authenticate('google'));
 
 const PORT = process.env.PORT || 5001; 
 //When Heroku runs our app, it injects
