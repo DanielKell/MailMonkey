@@ -1,32 +1,10 @@
 const express = require('express');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./config/keys');
+require("./services/passport");
 
 const app = express(); //Generates a new application
 
-//How to authenticate users inside of our application
-//Setting up passport with the ID, secret, and callback URL
-passport.use(new GoogleStrategy({
-    clientID: keys.googleClientID,
-    clientSecret: keys.googleSecret,
-    callbackURL: '/auth/google/callback'
-}, (accessToken, refreshToken, profile, done) => {
-        console.log('access token: ', accessToken);
-        console.log('refresh token: ', refreshToken);
-        console.log('profile: ', profile);
-    })
-);
-
-app.get(
-    '/auth/google', 
-    passport.authenticate('google', {
-        scope: ['profile', 'email']
-    }
-));
-//Scope = what we want to have access to in google
-
-app.get('/auth/google/callback', passport.authenticate('google'));
+//Same as requiring above, and running variable(app)
+require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 5001; 
 //When Heroku runs our app, it injects
