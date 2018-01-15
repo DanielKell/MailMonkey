@@ -15,6 +15,7 @@ passport.deserializeUser((id, done) => {
         .then(user => {
             done(null, user);
 });
+});
 
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
@@ -34,4 +35,4 @@ passport.use(new GoogleStrategy({
             }
         })        
     })
-);
+)
