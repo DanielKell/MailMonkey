@@ -5,7 +5,6 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users');
 
-//This user is the one that we are returning in the passport.use
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
@@ -27,13 +26,10 @@ async (accessToken, refreshToken, profile, done) => {
         const existingUser = await User.findOne({ googleId: profile.id })
 
         if (existingUser) {
-              //We already have a record with the profile ID
             return done(null, existingUser);
         }
-              //No user record with this ID
-              const user = await new User({ googleId: profile.id}) //Create new instance of a user
+              const user = await new User({ googleId: profile.id}) 
               .save() 
               done(null, user);
-            
         })        
 )
