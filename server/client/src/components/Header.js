@@ -11,7 +11,7 @@ class Header extends Component {
                     <li><a href="/auth/google">Login With Google </a></li>
                 )
             default: 
-                return <li><a>Logout</a></li>
+                return <li><a href="/api/logout">Logout</a></li>
         }
     }
 
@@ -19,10 +19,10 @@ class Header extends Component {
         return (
         <nav>
             <div className="nav-wrapper">
-            <a className="left brand-logo">MailMonkey</a>
-            <ul id="nav-mobile" className="right">
-                {this.renderContent()}
-            </ul>
+                <a className="left brand-logo">MailMonkey</a>
+                <ul id="nav-mobile" className="right">
+                    {this.renderContent()}
+                </ul>
             </div>
         </nav>
         );
