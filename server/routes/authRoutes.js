@@ -18,7 +18,7 @@ module.exports = (app) => {
 
     app.get('/api/logout', (req, res) => {
         req.logout();
-        res.redirect('/'); //Redirect to front page after logging out
+        res.redirect('/'); 
     })
 
     app.get('/api/current_user', (req, res) => {

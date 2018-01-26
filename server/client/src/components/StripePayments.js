@@ -11,7 +11,7 @@ class Payments extends Component {
                 name="MailMonkey"
                 description="Receive 5 Email Credits for $5"
                 amount={500} //in cents
-                token={token => this.props.handleToken(token)} //callback fn after receiving token
+                token={token => this.props.handleToken(token)} 
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
             >
                 <button className="btn">
