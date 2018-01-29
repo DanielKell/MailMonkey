@@ -2,13 +2,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-const keys = require('./config/keys');
+const keys = require('./config/keys')
+const bodyParser = require('body-parser');
 require('./models/User');
 require('./services/passport');
 
 mongoose.connect(keys.mongoURI);
 
 const app = express(); 
+
+app.use(bodyParser.json()); 
+//Middleware parses body and assigns to req.body
 
 app.use(
     cookieSession({
