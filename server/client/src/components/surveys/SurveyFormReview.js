@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
-const SurveyReview = ({ onCancel, formValues }) => {
+const SurveyReview = ({ onCancel, formValues, submitSurvey }) => {
     return (
         <div>
             <h5>Please confirm your inputs</h5>
@@ -24,10 +25,17 @@ const SurveyReview = ({ onCancel, formValues }) => {
                 </div>
             </div>
             <button 
-                className="red darken-3 btn-flat" 
+                className="red darken-3 white-text btn-flat" 
                 onClick={onCancel}    
             >
                 Back
+            </button>
+            <button
+                onClick={() => submitSurvey(formValues)}
+                className="green btn-flat right white-text"
+            >
+                Send Survey
+                <i className="material-icons right">email</i>
             </button>
         </div>
     )
@@ -39,4 +47,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(SurveyReview)
+export default connect(mapStateToProps, actions)(SurveyReview)
