@@ -40,6 +40,29 @@ class SurveyForm extends Component {
     }
 }
 
+function validate(values) {
+    const errors = {};
+
+    // _.each(FIELDS, ({ name }) => {
+    //     if(!values[name]) {
+    //         errors[name] = 'You must provide a value'
+    //     }
+    // });
+
+    if (!values.title) {
+        errors.title = 'You must provide a title'; //connects to Field
+    }
+    if (!values.subject) {
+        errors.title = 'You must provide a subject'; //connects to Field
+    }
+    if (!values.body) {
+        errors.title = 'You must provide a body to the email'; //connects to Field
+    }
+
+    return errors;
+}
+
 export default reduxForm({
+    validate,
     form: 'surveyForm'
 })(SurveyForm);
