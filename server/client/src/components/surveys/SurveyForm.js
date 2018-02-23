@@ -9,7 +9,7 @@ const FIELDS = [
     { label: 'Survey Title', name: 'title'},
     { label: 'Subject Line', name: 'subject'},
     { label: 'Email Body', name: 'body'},
-    { label: 'Recipient List', name: 'emails'}
+    { label: 'Recipient List', name: 'recipients'}
 ];
 
 class SurveyForm extends Component {
@@ -59,7 +59,7 @@ function validate(values) {
         errors.body = 'You must provide a body to the email'; //connects to Field
     }
 
-    errors.emails = validateEmails(values.emails || '');
+    errors.recipients = validateEmails(values.recipients || '');
 
     return errors;
 }
