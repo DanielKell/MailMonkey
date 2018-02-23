@@ -13,7 +13,7 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "webhook": "lt -s odufnikdirvo --port 5001" 
+    "webhook": "lt -s odufnikdirvo --port 5001"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +29,7 @@
     "nodemon": "^1.14.7",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^3.0.1",
     "sendgrid": "^5.2.3",
     "stripe": "^5.4.0"
   }
