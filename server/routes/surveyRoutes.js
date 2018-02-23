@@ -20,7 +20,7 @@ module.exports = app => {
 
         const p = new Path('/api/surveys/:surveyId/:choice');
 
-        const events = _.chain(req.body)
+        _.chain(req.body)
             .map((event) => {
                 const match = p.test(new URL(event.url).pathname);
 
@@ -31,7 +31,21 @@ module.exports = app => {
 
             .compact() //removes non-object elements
             .uniqBy('email', 'surveyId') //removes duplicates
+            .each( ({ surveyId, email, choice }) => {
+                Survey.updateOne({
+                    _id: surveyId,
+                    recipients: {
+                        $elemMatch: { email: email, responded: false }
+                    }
+                },
+                    {
+                        $inc: { [choice]: 1 },
+                        $set: { 'recipients.$.responded': true } 
+                }).exec();
+            })
             .value();
+
+        res.send({});
     })
 
     app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
