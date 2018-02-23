@@ -17,15 +17,21 @@ module.exports = app => {
     });
 
     app.post('/api/surveys/webhooks', (req, res) => {
-        const events = _.map(req.body, (event) => {
-            const pathname = new URL(event.url).pathname
-            const p = new Path('/api/surveys/:surveyId/:choice');
-            const match = p.test(pathname);
 
-            if (match) {
-                return {email: event.email, surveyId: match.surveyId, choice: match.choice};
-            }
-        })
+        const p = new Path('/api/surveys/:surveyId/:choice');
+
+        const events = _.chain(req.body)
+            .map((event) => {
+                const match = p.test(new URL(event.url).pathname);
+
+                if (match) {
+                    return {email: event.email, surveyId: match.surveyId, choice: match.choice};
+                }
+            })
+
+            .compact() //removes non-object elements
+            .uniqBy('email', 'surveyId') //removes duplicates
+            .value();
     })
 
     app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
