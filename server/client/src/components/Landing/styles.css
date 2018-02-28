@@ -1,0 +1,15 @@
+/* Styles for landing page */
+
+.parent-container {
+    text-align: center;
+}
+
+.landing-logo {
+    height: 130px;
+    width: 130px;
+}
+
+.front-page-title {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}

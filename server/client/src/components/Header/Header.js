@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Payments from './StripePayments';
+
+import Payments from '../StripePayments';
+import logo from '../../images/logo.svg';
+import './styles.css';
 
 class Header extends Component {
     renderContent() {
@@ -25,12 +28,16 @@ class Header extends Component {
 
     render() {
         return (
-        <nav>
+        <nav className="teal lighten-1">
             <div className="nav-wrapper">
+            
                 <Link 
                 to={this.props.auth ? '/surveys' : '/'} 
                 className="left brand-logo"
-                >MailMonkey</Link>
+                >
+                <img className="header-logo" src={logo} />
+                <span className="header-title">MailMonkey</span>
+                </Link>
                 <ul id="nav-mobile" className="right">
                     {this.renderContent()}
                 </ul>
