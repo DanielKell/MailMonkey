@@ -17,7 +17,7 @@ class Header extends Component {
                 )
             default: 
                 return [
-                    <li key="1"><Payments /></li>,
+                    <li key="1"><div class="payments-button"><Payments /></div></li>,
                     <li key="2" style={{ margin: '0 10px' }}>
                         Credits: {this.props.auth.credits}
                     </li>,
@@ -28,7 +28,7 @@ class Header extends Component {
 
     render() {
         return (
-        <nav className="teal lighten-1">
+        <nav className="teal lighten-1 header-container">
             <div className="nav-wrapper">
             
                 <Link 

@@ -1,0 +1,33 @@
+.piechart-container {
+    height: 150px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.survey-send-date {
+    font-style: italic;
+}
+
+.survey-body {
+    margin: 10px 0px 
+}
+
+.survey-responses {
+    font-size: 20px;
+}
+
+.yes-and-no {
+    width: 50%;
+}
+
+.response {
+    margin-left: 15%;
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+.data-container {
+    display: flex;
+    justify-content: space-between
+}

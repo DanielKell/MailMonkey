@@ -1,3 +1,7 @@
+.header-container {
+    margin-bottom: 20px;
+}
+
 .header-logo {
     height: 30px;
     width: 30px;
@@ -11,5 +15,15 @@
 @media (max-width: 600px) { 
     .header-title {
         font-size: 24px;
+    }
+
+    .payments-button {
+        position: absolute;
+        top: 90%;
+        z-index: 4;
+    }
+
+    .header-container {
+        margin-bottom: 47px;
     }
  }
