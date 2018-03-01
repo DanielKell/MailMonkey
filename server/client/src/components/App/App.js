@@ -7,6 +7,7 @@ import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
 import Dashboard from '../Dashboard';
 import SurveyNew from '../surveys/SurveyNew';
+import Footer from '../Footer/Footer';
 import './styles.css';
 
 class App extends Component {
@@ -16,14 +17,16 @@ class App extends Component {
 
     render() {
         return (
-            <div className="whole-page #cfd8dc blue-grey lighten-4">
+            <div className="whole-page">
                 <div className="container ">
                     <BrowserRouter>
                         <div>
                             <Header />
                             <Route exact path="/" component={Landing} />
                             <Route exact path="/surveys" component={Dashboard} />
-                            <Route path="/surveys/new" component={SurveyNew} />                </div>
+                            <Route path="/surveys/new" component={SurveyNew} />
+                            <Footer />
+                        </div>
                     </BrowserRouter>
                 </div>
             </div>

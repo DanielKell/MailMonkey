@@ -10,9 +10,9 @@ const Landing = () => {
                 MailMonkey
             </h1>
             <img className="landing-logo" src={logo} />
-            <p className="">
+            <h2 className="landing-summary">
             Welcome to MailMonkey! A simple-to-use application to collect feedback from your users.
-            </p>
+            </h2>
             <div class="row">
                 <div class="col s12 m4">
                     <div class="card teal lighten-1">

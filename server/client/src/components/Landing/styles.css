@@ -9,6 +9,10 @@
     width: 130px;
 }
 
+.landing-summary {
+    font-size: 20px;
+}
+
 .front-page-title {
     color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
