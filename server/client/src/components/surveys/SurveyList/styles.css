@@ -22,9 +22,10 @@
 }
 
 .response {
-    margin-left: 15%;
+    margin-left: 18%;
     margin-top: 25px;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .data-container {
