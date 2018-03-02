@@ -1,0 +1,22 @@
+/* .survey-form-container {
+    border: 2px gray solid;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #f0f0f5;
+    margin: 10px 0px;
+} */
+
+.survey-form-container {
+    border: 1px black solid;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #26a69a;
+    margin: 10px 0px;
+    color: white;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.info-icon {
+    margin-right: 10px;
+}

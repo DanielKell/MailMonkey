@@ -7,17 +7,28 @@ import validateEmails from '../../utilities/validateEmails';
 
 const FIELDS = [
     { label: 'Survey Title', name: 'title'},
-    { label: 'Subject Line', name: 'subject'},
+    { label: 'Email Subject Line', name: 'subject'},
     { label: 'Email Body', name: 'body'},
-    { label: 'Recipient List', name: 'recipients'}
+    { label: 'Recipient List (e.g. tom@gmail.com, sam@hotmail.com)', name: 'recipients'}
 ];
 
+const style = {
+    padding: '10px 20px',
+    width: 140,
+    display: 'block',
+    margin: '20px auto',
+    fontSize: '16px'
+  }
+  
+
 class SurveyForm extends Component {
+
+    
 
     renderFields() {
         return _.map(FIELDS, ({label, name}) => {
             return (
-            <Field key={name} component={SurveyField} type="text" label={label} name={name} /> 
+            <Field key={name} component={SurveyField} style={style} type="text" label={label} name={name} /> 
             )}
         )}
 

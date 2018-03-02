@@ -6,7 +6,7 @@ import * as actions from '../../actions';
 import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
 import Dashboard from '../Dashboard';
-import SurveyNew from '../surveys/SurveyNew';
+import SurveyNew from '../surveys/SurveyNew/SurveyNew';
 import Footer from '../Footer/Footer';
 import './styles.css';
 

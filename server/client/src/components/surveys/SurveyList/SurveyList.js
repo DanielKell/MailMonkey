@@ -17,7 +17,7 @@ class SurveyList extends Component {
                 <div className="card teal lighten-5" key={survey._id}>
                     <div className="card-content">
                         <span className="card-title"> {survey.title}</span>
-                        <div class="survey-body">
+                        <div className="survey-body">
                             <p>
                                 {survey.body}
                             </p>
