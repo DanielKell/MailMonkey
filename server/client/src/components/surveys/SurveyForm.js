@@ -12,23 +12,12 @@ const FIELDS = [
     { label: 'Recipient List (e.g. tom@gmail.com, sam@hotmail.com)', name: 'recipients'}
 ];
 
-const style = {
-    padding: '10px 20px',
-    width: 140,
-    display: 'block',
-    margin: '20px auto',
-    fontSize: '16px'
-  }
-  
-
 class SurveyForm extends Component {
-
-    
 
     renderFields() {
         return _.map(FIELDS, ({label, name}) => {
             return (
-            <Field key={name} component={SurveyField} style={style} type="text" label={label} name={name} /> 
+            <Field key={name} component={SurveyField} type="text" label={label} name={name} /> 
             )}
         )}
 
@@ -41,7 +30,7 @@ class SurveyForm extends Component {
                     <Link to="/surveys" className="red btn-flat white-text">
                         Cancel
                     </Link>
-                    <button className="teal btn-flat right white-text" type="submit">
+                    <button className="teal lighten-1 btn-flat right white-text" type="submit">
                         Next
                         <i className="material-icons right">done</i>
                     </button>

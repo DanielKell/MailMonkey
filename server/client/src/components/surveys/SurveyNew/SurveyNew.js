@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 
 import SurveyForm from '../SurveyForm';
-import SurveyFormReview from '../SurveyFormReview';
+import SurveyFormReview from '../SurveyFormReview/SurveyFormReview';
 import './styles.css';
 
 class SurveyNew extends Component {
@@ -11,11 +11,11 @@ class SurveyNew extends Component {
 
     renderContent() {
         if (this.state.showFormReview) {
-            return 
+            return (
             <SurveyFormReview 
                 onCancel={() => this.setState({ showFormReview: false })}
             />
-            ;
+            );
         }
 
         return (

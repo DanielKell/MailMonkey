@@ -1,4 +1,12 @@
-.survey-form-container {
+.survey-review-form-box {
+    padding: 20px 0px;
+}
+
+.survey-review-form-label {
+    font-size: 14px;
+}
+
+.survey-form-header {
     border: 1px black solid;
     padding: 15px;
     font-size: 18px;
@@ -7,6 +15,10 @@
     color: white;
     line-height: 1.8;
     text-align: center;
+}
+
+.survey-review-form-last-box {
+    margin-bottom: 20px;
 }
 
 .info-icon {
