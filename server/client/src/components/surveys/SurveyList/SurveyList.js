@@ -34,14 +34,24 @@ class SurveyList extends Component {
                                 <p className="response"> No: {survey.no}</p>
                             </div>
                             <div className="piechart-container">
+                            {survey.yes || survey.no ?
                                 <PieChart
                                     data={[
-                                        { value: survey.no, key: 1, color: '#C13C37' },
-                                        { value: survey.yes, key: 2, color: '#00e600' },
+                                        { value: survey.no, key: 1, color: '#cc3028' },
+                                        { value: survey.yes, key: 2, color: '#13b230' },
                                     ]}
                                     animate={true}
                                 />
+                            :
+                                <PieChart
+                                data={[
+                                    { value: 1, key: 1, color: 'teal' }
+                                ]}
+                                animate={true}
+                            />
+                                }
                             </div>
+
                         </div>
                     </div>
                 </div>

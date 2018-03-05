@@ -49,9 +49,7 @@ const SurveyReview = ({ onCancel, formValues, submitSurvey, history, auth }) => 
             <button
             className="teal lighten-1 btn-flat right white-text disabled"
             >
-            
-                Send Survey
-                <i className="material-icons right">email</i>
+             Please purchase credits!
             </button>
             }
 
