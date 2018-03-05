@@ -17,9 +17,9 @@ const Landing = () => {
                 <div className="col s12 m4">
                     <div className="card teal lighten-1">
                         <div className="card-content white-text">
-                        <span className="card-title">Draft Your Survey</span>
+                        <span className="card-title">Draft A Survey</span>
                         <i className="material-icons">drafts</i>
-                        <p>Create a survey quick and easily, then select who you want to send it to!</p>
+                        <p>Create a survey quick and easily, then select who you want to send it to</p>
                         </div>
                     </div>
                 </div>

@@ -19,6 +19,7 @@ class SurveyList extends Component {
                         <span className="card-title"> {survey.title}</span>
                         <div className="survey-body">
                             <p>
+                                
                                 {survey.body}
                             </p>
                         </div>
@@ -60,10 +61,24 @@ class SurveyList extends Component {
         })
     }
 
+    renderDummySurvey() {
+        return (
+            <div className="card teal lighten-5">
+                <div className="card-content">  
+                    <p className="no-surveys">This is where your surveys will appear once you've sent one! Click the button below to send your first survey.</p>
+                </div>
+            </div>
+        );
+    }
+
     render() {
         return (
             <div>
-                {this.renderSurveys()}
+                {this.props.surveys.length ? 
+                    this.renderSurveys()
+                :
+                    this.renderDummySurvey()
+                }
             </div>
         );
     }

@@ -35,7 +35,7 @@ class Header extends Component {
                 to={this.props.auth ? '/surveys' : '/'} 
                 className="left brand-logo"
                 >
-                <img className="header-logo" src={logo} />
+                <img className="header-logo" src={logo} alt={'MailMonkey Logo'}/>
                 <span className="header-title">MailMonkey</span>
                 </Link>
                 <ul id="nav-mobile" className="right">
