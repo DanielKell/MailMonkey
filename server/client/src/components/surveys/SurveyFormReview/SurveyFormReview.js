@@ -5,12 +5,12 @@ import { withRouter } from 'react-router-dom';
 import * as actions from '../../../actions';
 import './styles.css';
 
-const SurveyReview = ({ onCancel, formValues, submitSurvey, history }) => {
+const SurveyReview = ({ onCancel, formValues, submitSurvey, history, auth }) => {
     return (
         <div>
             <div className="survey-form-header">
                     <i className="material-icons info-icon">info </i>
-                    Please confirm your inputs
+                    Please confirm your inputs 
             </div>
             <div>
                 <div className="survey-review-form-box">
@@ -36,13 +36,26 @@ const SurveyReview = ({ onCancel, formValues, submitSurvey, history }) => {
             >
                 Back
             </button>
+            {auth.credits ?
             <button
                 onClick={() => submitSurvey(formValues, history)}
                 className="teal lighten-1 btn-flat right white-text"
             >
+                
                 Send Survey
                 <i className="material-icons right">email</i>
             </button>
+            :
+            <button
+            className="teal lighten-1 btn-flat right white-text disabled"
+            >
+            
+                Send Survey
+                <i className="material-icons right">email</i>
+            </button>
+            }
+
+
         </div>
     )
 }

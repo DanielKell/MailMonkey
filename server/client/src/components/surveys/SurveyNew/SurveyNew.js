@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 
 import SurveyForm from '../SurveyForm';
 import SurveyFormReview from '../SurveyFormReview/SurveyFormReview';
@@ -14,6 +15,7 @@ class SurveyNew extends Component {
             return (
             <SurveyFormReview 
                 onCancel={() => this.setState({ showFormReview: false })}
+                auth={this.props.auth}
             />
             );
         }
@@ -38,6 +40,16 @@ class SurveyNew extends Component {
     }
 }
 
+function mapStateToProps({ auth }) {
+    return { auth };
+}
+
+SurveyNew = connect(
+    mapStateToProps
+)(SurveyNew);
+
 export default reduxForm({
     form: 'surveyForm'
 })(SurveyNew)
+
+// export default connect (mapStateToProps)(SurveyNew);
