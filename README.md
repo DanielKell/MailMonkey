@@ -7,6 +7,14 @@ Every step is easy to use, as users can login via google OAuth and purchase cred
 
 Hosted at: https://mailmonkeyapp.herokuapp.com/
 
+## Mobile Version
+
+![](/server/screenshots/MailMonkeyMobile.jpg)
+
+## Desktop Version
+
+![](/server/screenshots/MailMonkeyDesktop.jpg)
+
 # Built Using 
 
 ### Front End:
